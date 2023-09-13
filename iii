@@ -1,0 +1,20 @@
+- mvs duels:
+if not isfolder("ranxV2") then
+    makefolder("ranxV2/games")
+end
+local suc,res = pcall(function()
+    return game:HttpGet("https://raw.githubusercontent.com/AsteriskCodes/Ranxware-V2-Restored/main/Games/MVS-DUELS.lua")
+end)
+if suc then
+    writefile("ranxV2/games/mvs-duels.lua",res)
+end
+local suc2,res2 = pcall(function()
+    return game:HttpGet("https://raw.githubusercontent.com/AsteriskCodes/Ranxware-V2-Restored/main/Games/MVS.lua")
+end)
+if suc2 then
+    writefile("ranxV2/games/mvs.lua",res2)
+end
+
+-- loader:
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AsteriskCodes/Ranxware-V2-Restored/main/loader.lua"))()
